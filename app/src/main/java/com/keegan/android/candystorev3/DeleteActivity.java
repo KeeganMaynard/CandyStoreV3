@@ -46,6 +46,21 @@ public class DeleteActivity extends AppCompatActivity {
                 DeleteActivity.this.finish();
             }
         });
+
+        scrollView.addView(group);
+        layout.addView( scrollView );
+
+        // add back button at bottom
+        RelativeLayout.LayoutParams params
+                = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT );
+        params.addRule( RelativeLayout.ALIGN_PARENT_BOTTOM );
+        params.addRule( RelativeLayout.CENTER_HORIZONTAL );
+        params.setMargins( 0, 0, 0, 50 );
+        layout.addView( backButton, params );
+
+        setContentView( layout );
     }
 
     private class RadioButtonHandler implements RadioGroup.OnCheckedChangeListener{
